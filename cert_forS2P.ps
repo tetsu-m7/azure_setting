@@ -1,0 +1,9 @@
+# Connect-AzAccount
+# Get-AzSubscription
+
+$P2SRootCertName = "Root.cer"
+$filePathForCert = "C:\linux_home\Root.cer"
+$cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2($filePathForCert)
+$CertBase64 = [system.convert]::ToBase64String($cert.RawData)
+Add-AzVpnClientRootCertificate -VpnClientRootCertificateName $P2SRootCertName -VirtualNetworkGatewayname "VNet1GW" -ResourceGroupName "TestRG1" -PublicCertData $CertBase64
+
