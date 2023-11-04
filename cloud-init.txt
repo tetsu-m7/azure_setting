@@ -1,0 +1,16 @@
+#cloud-config
+#package_upgrade: true
+timezone: America/Los_Angeles
+packages:
+  - vim
+  - tcpdump
+  - curl
+  - wget
+  - bash-completion
+#  - azure-cli
+runcmd:
+  - dnf install -y https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
+  - dnf install -y azure-cli
+  - az login --identity
+  - hostnamectl set-hostname test
+  - sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
