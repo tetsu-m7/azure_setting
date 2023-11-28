@@ -1,0 +1,14 @@
+{
+  "Name": "s2pcreation",
+  "IsCustom": true,
+  "Description": "For S2P creation app",
+  "Actions": [
+    "Microsoft.Network/*",
+    "Microsoft.Resources/subscriptions/resourcegroups/read"
+  ],
+  "NotActions": [
+  ],
+  "AssignableScopes": [
+    "/subscriptions/88c4acb3-a375-48f0-8729-fc73e5b518f4"
+  ]
+}
